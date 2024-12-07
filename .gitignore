@@ -1,0 +1,7 @@
+GainPanTutorial.jucer
+Builds/VisualStudio2022/GainPanTutorial_StandalonePlugin.vcxproj.user
+Builds/VisualStudio2022/.vs/
+Builds/VisualStudio2022/packages/Microsoft.Web.WebView2.1.0.1901.177/
+Builds/VisualStudio2022/x64/Debug/Shared Code/GainPanTutorial.Build.CppClean.log
+Builds/VisualStudio2022/x64/
+JuceLibraryCode/

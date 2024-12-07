@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio Version 17
+
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GainPanTutorial - Standalone Plugin", "GainPanTutorial_StandalonePlugin.vcxproj", "{9C4DE2D7-B5EF-4B08-8F60-94E4CDF9DB7D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CF03472E-928F-B628-6AA6-A2ADEC829D31} = {CF03472E-928F-B628-6AA6-A2ADEC829D31}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GainPanTutorial - VST3", "GainPanTutorial_VST3.vcxproj", "{79E09F30-D171-B311-EE4B-2FC9032DDC7B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CF03472E-928F-B628-6AA6-A2ADEC829D31} = {CF03472E-928F-B628-6AA6-A2ADEC829D31}
+		{5371FF4E-7BE3-CFC6-ACF9-F9745809CE3D} = {5371FF4E-7BE3-CFC6-ACF9-F9745809CE3D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GainPanTutorial - Shared Code", "GainPanTutorial_SharedCode.vcxproj", "{CF03472E-928F-B628-6AA6-A2ADEC829D31}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GainPanTutorial - VST3 Manifest Helper", "GainPanTutorial_VST3ManifestHelper.vcxproj", "{5371FF4E-7BE3-CFC6-ACF9-F9745809CE3D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79E09F30-D171-B311-EE4B-2FC9032DDC7B}.Debug|x64.ActiveCfg = Debug|x64
+		{79E09F30-D171-B311-EE4B-2FC9032DDC7B}.Debug|x64.Build.0 = Debug|x64
+		{79E09F30-D171-B311-EE4B-2FC9032DDC7B}.Release|x64.ActiveCfg = Release|x64
+		{79E09F30-D171-B311-EE4B-2FC9032DDC7B}.Release|x64.Build.0 = Release|x64
+		{9C4DE2D7-B5EF-4B08-8F60-94E4CDF9DB7D}.Debug|x64.ActiveCfg = Debug|x64
+		{9C4DE2D7-B5EF-4B08-8F60-94E4CDF9DB7D}.Debug|x64.Build.0 = Debug|x64
+		{9C4DE2D7-B5EF-4B08-8F60-94E4CDF9DB7D}.Release|x64.ActiveCfg = Release|x64
+		{9C4DE2D7-B5EF-4B08-8F60-94E4CDF9DB7D}.Release|x64.Build.0 = Release|x64
+		{CF03472E-928F-B628-6AA6-A2ADEC829D31}.Debug|x64.ActiveCfg = Debug|x64
+		{CF03472E-928F-B628-6AA6-A2ADEC829D31}.Debug|x64.Build.0 = Debug|x64
+		{CF03472E-928F-B628-6AA6-A2ADEC829D31}.Release|x64.ActiveCfg = Release|x64
+		{CF03472E-928F-B628-6AA6-A2ADEC829D31}.Release|x64.Build.0 = Release|x64
+		{5371FF4E-7BE3-CFC6-ACF9-F9745809CE3D}.Debug|x64.ActiveCfg = Debug|x64
+		{5371FF4E-7BE3-CFC6-ACF9-F9745809CE3D}.Debug|x64.Build.0 = Debug|x64
+		{5371FF4E-7BE3-CFC6-ACF9-F9745809CE3D}.Release|x64.ActiveCfg = Release|x64
+		{5371FF4E-7BE3-CFC6-ACF9-F9745809CE3D}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
