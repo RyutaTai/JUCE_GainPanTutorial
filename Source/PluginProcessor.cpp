@@ -185,9 +185,13 @@ inline void GainPanTutorialAudioProcessor::processBlockImpl(
             rightMulValue *= std::min(1.0f, 2 * panValue);
         }
 
-        leftAudioBuff[samplesIdx] = leftAudioBuff[samplesIdx] * leftMulValue + leftAudioBuff[samplesIdx] * (1 - dryWetValue);
+        leftAudioBuff[samplesIdx]  = leftAudioBuff[samplesIdx] * leftMulValue + leftAudioBuff[samplesIdx] * (1 - dryWetValue);
         rightAudioBuff[samplesIdx] = rightAudioBuff[samplesIdx] * rightMulValue + rightAudioBuff[samplesIdx] * (1 - dryWetValue);
-
+        
+#if 0   // Dryê¨ï™ÇàÍéûìIÇ…ñ≥å¯âª
+        leftAudioBuff[samplesIdx] *= dryWetValue;  
+        rightAudioBuff[samplesIdx] *= dryWetValue;
+#endif
     }
 }
 
