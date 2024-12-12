@@ -106,7 +106,7 @@ private:
     void updateParameters()
     {
         gainSmoothed.setTargetValue(*gain);
-		panAngleSmoothed.setTargetValue((*panAngle / 100 + 1) * 0.5);
+        panAngleSmoothed.setTargetValue((*panAngle / 100 + 1) * 0.5);
         dryWetSmoothed.setTargetValue(*bypass ? 0.0f : 1.0f);
     }
 

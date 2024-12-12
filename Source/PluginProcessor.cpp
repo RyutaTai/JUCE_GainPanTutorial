@@ -140,12 +140,13 @@ bool GainPanTutorialAudioProcessor::isBusesLayoutSupported (const BusesLayout& l
 }
 #endif
 
+#if 1
 template<typename T>
 inline void GainPanTutorialAudioProcessor::processBlockImpl(
     juce::AudioBuffer<T>& buffer, juce::MidiBuffer& midiMessages)
 {
     juce::ScopedNoDenormals noDenormals;
-    auto totalNumInputChannels  = getTotalNumInputChannels();
+    auto totalNumInputChannels = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
 
     // In case we have more outputs than inputs, this code clears any output
@@ -187,13 +188,60 @@ inline void GainPanTutorialAudioProcessor::processBlockImpl(
 
         leftAudioBuff[samplesIdx]  = leftAudioBuff[samplesIdx] * leftMulValue + leftAudioBuff[samplesIdx] * (1 - dryWetValue);
         rightAudioBuff[samplesIdx] = rightAudioBuff[samplesIdx] * rightMulValue + rightAudioBuff[samplesIdx] * (1 - dryWetValue);
-        
-#if 0   // Dry成分を一時的に無効化
-        leftAudioBuff[samplesIdx] *= dryWetValue;  
-        rightAudioBuff[samplesIdx] *= dryWetValue;
-#endif
+
     }
 }
+#else   //  サイトからコピペ
+
+template <typename T>
+inline void GainPanTutorialAudioProcessor::processBlockImpl(
+    juce::AudioBuffer<T>& buffer, juce::MidiBuffer& midiMessages)
+{
+    juce::ScopedNoDenormals noDenormals;
+    auto totalNumInputChannels = getTotalNumInputChannels();
+    auto totalNumOutputChannels = getTotalNumOutputChannels();
+
+    // In case we have more outputs than inputs, this code clears any output
+    // channels that didn't contain input data, (because these aren't
+    // guaranteed to be empty - they may contain garbage).
+    // This is here to avoid people getting screaming feedback
+    // when they first compile a plugin, but obviously you don't need to keep
+    // this code if your algorithm always overwrites all the output channels.
+    for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
+    {
+        buffer.clear(i, 0, buffer.getNumSamples());
+    }
+    updateParameters();
+
+    auto* leftAudioBuff = buffer.getWritePointer(0);
+    auto* rightAudioBuff = buffer.getWritePointer(1);
+    auto buffLength = buffer.getNumSamples();
+    bool panIsLinear = (*panRule == 0);
+
+    for (int samplesIdx = 0; samplesIdx < buffLength; samplesIdx++)
+    {
+        auto dryWetValue = dryWetSmoothed.getNextValue();
+        auto gainValue = juce::Decibels::decibelsToGain(gainSmoothed.getNextValue(), -100.0f);
+        auto leftMulValue = gainValue * dryWetValue;
+        auto rightMulValue = leftMulValue;
+
+        auto panValue = panAngleSmoothed.getNextValue();
+        if (panIsLinear)
+        {
+            leftMulValue *= (1 - panValue);
+            rightMulValue *= panValue;
+        }
+        else 
+        {
+            leftMulValue *= std::min(1.0f, 2 - 2 * panValue);
+            rightMulValue *= std::min(1.0f, 2 * panValue);
+        }
+
+		leftAudioBuff[samplesIdx]  = leftAudioBuff[samplesIdx] * leftMulValue + leftAudioBuff[samplesIdx] * (1 - dryWetValue);
+		rightAudioBuff[samplesIdx] = rightAudioBuff[samplesIdx] * rightMulValue + rightAudioBuff[samplesIdx] * (1 - dryWetValue);
+    }
+}
+#endif
 
 //==============================================================================
 bool GainPanTutorialAudioProcessor::hasEditor() const
