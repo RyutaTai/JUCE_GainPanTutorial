@@ -11,6 +11,22 @@
 #include <JuceHeader.h>
 #include "PluginProcessor.h"
 
+/*----- í«â¡ -----*/
+struct SinglePageBrowser :juce::WebBrowserComponent
+{
+    using WebBrowserComponent::WebBrowserComponent;
+
+    // Prevent page loads from navigating away from our single page web app
+    bool pageAboutToLoad(const juce::String& newURL) override 
+    {
+        return newURL == juce::String("http://localhost:5173/") ||
+            newURL == getResourceProviderRoot();
+    }
+
+};
+
+/*----- í«â¡èIÇÌÇË -----*/
+
 //==============================================================================
 /**
 */
