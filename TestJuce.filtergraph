@@ -61,7 +61,7 @@
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
-  <FILTER uid="5" x="0.25875" y="0.3224568138195777" useARA="0">
+  <FILTER uid="5" x="0.3620474406991261" y="0.3814229249011858" useARA="0">
     <PLUGIN name="Sine Wave Synth" format="Internal" category="Synth" manufacturer="JUCE"
             version="1.0.0" file="Sine Wave Synth" uniqueId="16fd76a8" isInstrument="1"
             fileTime="0" infoUpdateTime="0" numInputs="0" numOutputs="2"
@@ -74,14 +74,15 @@
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
-  <FILTER uid="11" x="0.2609238451935081" y="0.5375494071146245" useARA="0"
-          uiLastX_Generic="14" uiLastY_Generic="428" uiopen_Generic="0">
+  <FILTER uid="20" x="0.4531835205992509" y="0.6324110671936759" useARA="0"
+          uiLastX_Normal="757" uiLastY_Normal="238" uiopen_Normal="0" uiLastX_Generic="974"
+          uiLastY_Generic="305" uiopen_Generic="0">
     <PLUGIN name="GainPanTutorial" format="VST3" category="Fx" manufacturer="yourcompany"
-            version="1.0.0" file="E:\Program\JUCE\JuceProject\GainPanTutorial\Builds\VisualStudio2022\x64\Debug\VST3\GainPanTutorial.vst3\Contents\x86_64-win\GainPanTutorial.vst3"
-            uniqueId="fa96d31b" isInstrument="0" fileTime="193a616b00b" infoUpdateTime="193a779c060"
+            version="1.0.0" file="E:\Program\JUCE\JuceProject\GainPanTutorial\Builds\VisualStudio2022\x64\Release\VST3\GainPanTutorial.vst3\Contents\x86_64-win\GainPanTutorial.vst3"
+            uniqueId="fa96d31b" isInstrument="0" fileTime="193bdf543e1" infoUpdateTime="193be0f93af"
             numInputs="2" numOutputs="2" isShell="0" hasARAExtension="0"
             uid="e956f59f"/>
-    <STATE>427.VMjLgHZ....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVMEUy.Ea0cVZtMEcgQWY9vSRC8Vav8lak4Fc9HyL13hUMoFSmAESt3hKt7zJlcUXxEDZisVRxH1a3vVX3fjTLQmKogjYTwVXogiQY8FMwjENHIUUTkEUKMCR38TNtHzSPUjZTEDLTEEUUoFUSQyPOAUQpQUPvPDRuEkUOgFRVQlcEEiX4kjPHESQFEFLUY0Sn4RZKYGR3sTN1MDUAkTUP0TPRokZvjFRsUjUZQWRBgTLEYTXvTkUOglKosjcHg2R4X2PTETRUAUSAIkVpASZHYWQrEVPzDSVxUEaHYFVWgkbUcUV3fjTKcmKCwDctjFR0MyPOAUQpQUPvPDRuEkUOglKWgEcIU0XxUEaHYFVWgkbUcUV3fjTLQmKogTcyLzS04RUPIUQTMUQQUUTR0zZO4hKt3hKt3hKt3hKt3hKt3hKt3hKt3hYRUUSTEETIckVwTjQisVTTgkdEYDOujzPu0Fbu4VYtQmO77hUSQ0LPwVcmklaSQWXzUlO..</STATE>
+    <STATE>430.VMjLgTZ....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVMEUy.Ea0cVZtMEcgQWY9vSRC8Vav8lak4Fc9HyL33hUMoFSmgESt3hKt7zJlcUXxEDZisVRxH1a3vVX3fjTLQmKogjYTwVXogiQY8FMwjENHIUUTkEUKMCR38TNtHzSPUjZTEDLTEEUUoFUSQyPOAUQpQUPvPDRuEkUOgFRVQlcEEiX4kjPHESQFEFLUY0Sn4RZKYGR3sTN1MDUAkTUP0TPRokZvjFRsUjUZQWRBgTLEYTXvTkUOgldRwjctj1R1gDdKkicCQUPIUETMEjTZoFLogjcEwVXAQSLYIWUrgjYXcEVxU0UYgCRRwjctj1R1gDdKkicCQUPIUETMEjTZoFLogjcEwVXRU0QgsVRBgTLEYTXvTkUOgFQosjcHg2R4XWdKAUQpQUPvPUTTUkZTMEMC4hKt3hKt3hKt3hKt3hKt3hKt3hKt3haTU0PUQDU3sFaicVTWkEQEYzXmEDOujzPu0Fbu4VYtQmO77hUSQ0LPwVcmklaSQWXzUlO..</STATE>
     <LAYOUT>
       <INPUTS>
         <BUS index="0" layout="L R"/>
@@ -92,8 +93,8 @@
     </LAYOUT>
   </FILTER>
   <CONNECTION srcFilter="2" srcChannel="4096" dstFilter="5" dstChannel="4096"/>
-  <CONNECTION srcFilter="5" srcChannel="0" dstFilter="11" dstChannel="0"/>
-  <CONNECTION srcFilter="5" srcChannel="1" dstFilter="11" dstChannel="1"/>
-  <CONNECTION srcFilter="11" srcChannel="0" dstFilter="3" dstChannel="0"/>
-  <CONNECTION srcFilter="11" srcChannel="1" dstFilter="3" dstChannel="1"/>
+  <CONNECTION srcFilter="5" srcChannel="0" dstFilter="20" dstChannel="0"/>
+  <CONNECTION srcFilter="5" srcChannel="1" dstFilter="20" dstChannel="1"/>
+  <CONNECTION srcFilter="20" srcChannel="0" dstFilter="3" dstChannel="0"/>
+  <CONNECTION srcFilter="20" srcChannel="1" dstFilter="3" dstChannel="1"/>
 </FILTERGRAPH>

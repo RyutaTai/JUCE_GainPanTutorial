@@ -77,7 +77,7 @@ private:
 
     std::optional<juce::WebBrowserComponent::Resource> getResource(const juce::String& url);
 
-    const char* getMimeForCExtension(const juce::String& extension);
+    const char* getMimeForExtension(const juce::String& extension);
 
     juce::WebSliderParameterAttachment gainAttachment{ *audioProcessor.parameters.getParameter("gain"),gainRelay,nullptr };
     juce::WebSliderParameterAttachment panAttachment{ *audioProcessor.parameters.getParameter("panAngle"),panRelay,nullptr };

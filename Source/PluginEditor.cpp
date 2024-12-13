@@ -17,7 +17,7 @@ GainPanTutorialAudioProcessorEditor::GainPanTutorialAudioProcessorEditor (GainPa
     // editor's size to whatever you need it to be.
     
     addAndMakeVisible(webComponent);
-#if 0
+#if 1
     webComponent.goToURL("http://localhost:5173/");
 #else
     webComponent.goToURL(juce::WebBrowserComponent::getResourceProviderRoot());
@@ -66,13 +66,13 @@ GainPanTutorialAudioProcessorEditor::getResource(const juce::String& url)
         entryStream->setPosition(0);
         entryStream->read(result.data(), result.size());
 
-        auto mine = getMimeForCExtension(entry->filename.fromLastOccurrenceOf(".", false, false).toLowerCase());
+        auto mine = getMimeForExtension(entry->filename.fromLastOccurrenceOf(".", false, false).toLowerCase());
         return juce::WebBrowserComponent::Resource{ std::move(result), std::move(mine) };
     }
     return std::nullopt;
 }
 
-const char* GainPanTutorialAudioProcessorEditor::getMimeForCExtension(const juce::String& extension)
+const char* GainPanTutorialAudioProcessorEditor::getMimeForExtension(const juce::String& extension)
 {
     static const std::unordered_map<juce::String, const char*>mineMap =
     {
